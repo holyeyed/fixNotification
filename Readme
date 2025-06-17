@@ -1,3 +1,9 @@
 Chương trình dùng fix lỗi thông báo trên xiaomi hyperOS
-Chương trình có khả năng gỡ, cài đặt lại app hệ thống
-Chương trình cần được cấp quyền bởi Shizuku để thực hiện các quyền và lệnh
+Hoàn toàn tự động một khi bạn mở chức năng nhà phát triển, gỡ lỗi usb và kết nối thành công điện thoại với máy tính.
+Các bước thực hiện:
+- Cài đặt chương trình adb tool trên máy tính
+- Mở chế độ nhà phát triển trên điện thoại
+- bật chức năng gỡ lỗi usb trên điện thoại
+- kết nối điện thoại với máy tính
+- nhấp đúp vào file cmd để chạy lệnh
+Tận hưởng kết quả đạt được!
