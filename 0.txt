@@ -38,4 +38,3 @@ echo Finish!
 echo Device reboot after 5s...
 sleep 5
 reboot
-reboot
