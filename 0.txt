@@ -8,33 +8,23 @@ echo $wlist
 
  cmd settings put global low_power_sticky 0
  cmd settings put global meeting_optimization_white_list_pkg_name $wlist
- cmd settings put global mobile_tc_enabled_list_pkg_name $wlist
- cmd settings put global mobile_tc_white_list_pkg_name $wlist
- cmd settings put global scene_dsda_change_dsds_white_list_pkg_name $wlist
  cmd settings put secure miui_optimization 0
  cmd settings put secure sync_on_wifi_only 0
  cmd settings put system background_power_saving_enable 0
  cmd settings put system deviceLevelList "v:1,c:3,g:3"
- cmd settings put system performance_mode_on 1
- cmd settings put system power_center_wakeup_notification 1
  cmd settings put system power_mode "middle"
  cmd settings put system power_pkg_white_list $wlist
- cmd settings put system POWER_SAVE_PRE_SYNCHRONIZE_ENABLE 1
  cmd settings put system power_screenon_white_list $wlist
  cmd settings put system power_service_white_list "com.google.android.gms"
  cmd settings put system rt_pkg_white_list $wlist
- cmd settings put system scene_dsda_change_dsds_white_list_pkg_name $wlist
  cmd settings put system thermal_limit_refresh_rate 60
  cmd settings put system turbo_sched_core_app_list $wlist
  cmd settings put system vibrate_in_normal 1
  cmd settings put system vibrate_when_ringing 1
-
 cmd power set-fixed-performance-mode-enabled false
 cmd power set-adaptive-power-saver-enabled false
-pwp=("SCHEDULE_EXACT_ALARM" "USE_FULL_SCREEN_INTENT" "READ_CALL_LOG" "SYSTEM_ALERT_WINDOW" "GET_USAGE_STATS" "READ_PHONE_STATE" "RUN_ANY_IN_BACKGROUND" "NO_ISOLATED_STORAGE" "USE_ICC_AUTH_WITH_DEVICE_IDENTIFIER" "BLUETOOTH_CONNECT" "ACCESS_RESTRICTED_SETTINGS" "10037" "10038" "10044")
-for p in ${pwp[@]}; do appops set com.miui.powerkeeper $p deny; done
-appops write-settings
+pwp=("BATTERY_STATS" "WRITE_SECURE_SETTINGS" "SYSTEM_ALERT_WINDOW" "INTERACT_ACROSS_USERS" "WRITE_EMBEDDED_SUBSCRIPTIONS" "PACKAGE_USAGE_STATS")
+for p in ${pwp[@]}; do pm revoke com.miui.powerkeeper android.permission.$p; pm set-permission-flags com.miui.powerkeeper android.permission.$p user-set revoke-when-request; done
 echo Finish!
 echo Device reboot after 5s...
 sleep 5
-reboot
