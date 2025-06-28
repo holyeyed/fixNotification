@@ -10,4 +10,8 @@ Tận hưởng kết quả đạt được!
 * update 21/06/2025
 - powerkeeper keep changes there settings to default values.
 - appops set permission to limit powerkeeper
-* com.tencent.mm(Wechat) application is in whitelist of all china phone, so that, it keep running even Powersaver keep another app turn off. I write a simple app with the running service that mnake device keep wake up, so improve background app running.
+* com.tencent.mm(Wechat) application is in whitelist of all china phone, 
+so that, it keep running even Powersaver keep another app turn off. 
+I write a simple app with the same package (com.tencent.mm) that run the service which mnake device keep wake up, 
+so improve background app, keep them wake up too. 
+Enjoy it!
