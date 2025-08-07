@@ -3,28 +3,19 @@ echo B list
 echo =================
 pm list packages -e -3 | grep -E "zalo|facebook|gm|telegram|instagram|ugc|discord|whatsapp" | sed -e "s/^package://" >/data/local/tmp/b.txt
 wlist=""
-for word in $(cat /data/local/tmp/b.txt); do wlist="$wlist$word,"; done
+for word in $(cat /data/local/tmp/b.txt); do wlist="$wlist$word;"; done
 echo $wlist
-
- cmd settings put global low_power_sticky 0
- cmd settings put global meeting_optimization_white_list_pkg_name $wlist
+cmd settings put system millet_white $wlist
+ cmd settings put global low_power_sticky 1
  cmd settings put secure miui_optimization 0
  cmd settings put secure sync_on_wifi_only 0
  cmd settings put system background_power_saving_enable 0
  cmd settings put system deviceLevelList "v:1,c:3,g:3"
- cmd settings put system power_mode "middle"
- cmd settings put system power_pkg_white_list $wlist
- cmd settings put system power_screenon_white_list $wlist
- cmd settings put system power_service_white_list "com.google.android.gms"
- cmd settings put system rt_pkg_white_list $wlist
- cmd settings put system thermal_limit_refresh_rate 60
- cmd settings put system turbo_sched_core_app_list $wlist
+ cmd settings put system power_center_wakeup_notification 1
+ cmd settings put system wakeup_for_keyguard_notification 1
  cmd settings put system vibrate_in_normal 1
  cmd settings put system vibrate_when_ringing 1
-cmd power set-fixed-performance-mode-enabled false
-cmd power set-adaptive-power-saver-enabled false
-pwp=("BATTERY_STATS" "WRITE_SECURE_SETTINGS" "SYSTEM_ALERT_WINDOW" "INTERACT_ACROSS_USERS" "WRITE_EMBEDDED_SUBSCRIPTIONS" "PACKAGE_USAGE_STATS")
-for p in ${pwp[@]}; do pm revoke com.miui.powerkeeper android.permission.$p; pm set-permission-flags com.miui.powerkeeper android.permission.$p user-set revoke-when-request; done
+cmd settings put global private_dns_specifier dns.adguard.com
 echo Finish!
 echo Device reboot after 5s...
 sleep 5
