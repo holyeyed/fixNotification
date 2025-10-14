@@ -1,21 +1,31 @@
 echo =================
 echo B list
 echo =================
-pm list packages -e -3 | grep -E "zalo|facebook|gm|telegram|instagram|ugc|discord|whatsapp" | sed -e "s/^package://" >/data/local/tmp/b.txt
+pm list packages -e -3 | grep -E "zalo|facebook|gm|telegram|instagram|ugc|discord|whatsapp|chrome" | sed -e "s/^package://" >/data/local/tmp/b.txt
 wlist=""
-for word in $(cat /data/local/tmp/b.txt); do wlist="$wlist$word;"; done
+wl2=""
+for word in $(cat /data/local/tmp/b.txt); do wlist="$wlist$word;"; wl2="$wl2$word,"; done
 echo $wlist
 cmd settings put system millet_white $wlist
- cmd settings put global low_power_sticky 1
- cmd settings put secure miui_optimization 0
- cmd settings put secure sync_on_wifi_only 0
- cmd settings put system background_power_saving_enable 0
- cmd settings put system deviceLevelList "v:1,c:3,g:3"
- cmd settings put system power_center_wakeup_notification 1
- cmd settings put system wakeup_for_keyguard_notification 1
- cmd settings put system vibrate_in_normal 1
- cmd settings put system vibrate_when_ringing 1
+cmd settings put system rt_pkg_white_list $wl2
+cmd settings put global low_power_sticky 1
+cmd settings put secure miui_optimization -1
+cmd settings put secure sync_on_wifi_only -1
+cmd settings put system background_power_saving_enable -1
+cmd settings put system deviceLevelList "v:1,c:3,g:3"
+cmd settings put system power_center_wakeup_notification 1
+cmd settings put system wakeup_for_keyguard_notification 1
+cmd settings put system vibrate_in_normal 1
+cmd settings put system vibrate_when_ringing 1
 cmd settings put global private_dns_specifier dns.adguard.com
+cmd settings put system power_pkg_white_list com.google.android.ext.services
+cmd settings put system power_proc_white_list com.google.android.gms.persistent
+cmd settings put system power_service_white_list com.google.android.gms
+cmd settings put system show_lunar_calendar 1
+settings put global app_standby_enabled 0
+settings put global	battery_tip_constants	com.google.android.gms	app_restriction_enabled=false
+
+device_config set_sync_disabled_for_tests persistent
+device_config put app_hibernation app_hibernation_enabled false
 echo Finish!
-echo Device reboot after 5s...
 sleep 5
