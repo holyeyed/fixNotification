@@ -18,14 +18,12 @@ cmd settings put system wakeup_for_keyguard_notification 1
 cmd settings put system vibrate_in_normal 1
 cmd settings put system vibrate_when_ringing 1
 cmd settings put global private_dns_specifier dns.adguard.com
-cmd settings put system power_pkg_white_list com.google.android.ext.services
 cmd settings put system power_proc_white_list com.google.android.gms.persistent
-cmd settings put system power_service_white_list com.google.android.gms
 cmd settings put system show_lunar_calendar 1
-settings put global app_standby_enabled 0
-settings put global	battery_tip_constants	com.google.android.gms	app_restriction_enabled=false
-
-device_config set_sync_disabled_for_tests persistent
-device_config put app_hibernation app_hibernation_enabled false
+settings put global app_standby_enabled false
+cmd settings put system perf_power_appState_enable 1
+cmd settings put system performance_mode_on 1
+cmd settings put system POWER_SAVE_PRE_HIDE_MODE performance
+cmd settings put system POWER_PERFORMANCE_MODE_OPEN 0
 echo Finish!
 sleep 5
