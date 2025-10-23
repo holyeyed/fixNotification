@@ -8,20 +8,18 @@ for word in $(cat /data/local/tmp/b.txt); do wlist="$wlist$word;"; wl2="$wl2$wor
 echo $wlist
 cmd settings put system millet_white $wlist
 cmd settings put system rt_pkg_white_list $wl2
-cmd settings put global low_power_sticky 1
-cmd settings put secure miui_optimization -1
-cmd settings put secure sync_on_wifi_only -1
-cmd settings put system background_power_saving_enable -1
+cmd settings put global meeting_optimization_white_list_pkg_name $wl2
+cmd settings put secure miui_optimization 0
+cmd settings put secure sync_on_wifi_only 0
+cmd settings put system background_power_saving_enable 0
 cmd settings put system deviceLevelList "v:1,c:3,g:3"
-cmd settings put system power_center_wakeup_notification 1
+cmd settings put system power_center_wakeup_notification -1
 cmd settings put system wakeup_for_keyguard_notification 1
 cmd settings put system vibrate_in_normal 1
 cmd settings put system vibrate_when_ringing 1
 cmd settings put global private_dns_specifier dns.adguard.com
-cmd settings put system power_proc_white_list com.google.android.gms.persistent
-cmd settings put system show_lunar_calendar 1
-settings put global app_standby_enabled false
-cmd settings put system perf_power_appState_enable 1
+settings put global app_standby_enabled 0
+settings put secure unknown_sources_default_reversed 0
 cmd settings put system performance_mode_on 1
 cmd settings put system POWER_SAVE_PRE_HIDE_MODE performance
 cmd settings put system POWER_PERFORMANCE_MODE_OPEN 0
