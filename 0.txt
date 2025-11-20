@@ -18,10 +18,7 @@ cmd settings put system wakeup_for_keyguard_notification 1
 cmd settings put system vibrate_in_normal 1
 cmd settings put system vibrate_when_ringing 1
 cmd settings put global private_dns_specifier dns.adguard.com
-settings put global app_standby_enabled 0
-settings put secure unknown_sources_default_reversed 0
-cmd settings put system performance_mode_on 1
-cmd settings put system POWER_SAVE_PRE_HIDE_MODE performance
-cmd settings put system POWER_PERFORMANCE_MODE_OPEN 0
+am force-stop com.miui.powerkeeper
+pm clear com.miui.powerkeeper
 echo Finish!
 sleep 5
