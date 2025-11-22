@@ -2,7 +2,7 @@ echo =================
 echo B list
 echo =================
 pm list packages -e -3 | grep -E "zalo|facebook|gm|telegram|instagram|ugc|discord|whatsapp|chrome" | sed -e "s/^package://" >/data/local/tmp/b.txt
-wlist=""
+wlist="com.google.android.gms;"
 wl2=""
 for word in $(cat /data/local/tmp/b.txt); do wlist="$wlist$word;"; wl2="$wl2$word,"; done
 echo $wlist
