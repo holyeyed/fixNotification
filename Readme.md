@@ -10,6 +10,7 @@ Chương trình dùng fix lỗi thông báo trên xiaomi hyperOS<br>
   + Sau cùng bạn nhấn "Chạy Keep-Alive" là được
   + Ứng dụng tự chạy lại khi khởi động lại máy, bạn ko cần mở lại ứng dụng.
 ![Keep-alive](Keep-alive.jpg)
+![Keep-alive](keep-alive(en).jpg)
 * phiên bản cũ (dùng adb trên máy tính)
 Hoàn toàn tự động một khi bạn mở chức năng nhà phát triển, gỡ lỗi usb và kết nối thành công điện thoại với máy tính.
 Các bước thực hiện:
