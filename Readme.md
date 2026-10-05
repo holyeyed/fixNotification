@@ -1,5 +1,5 @@
-Chương trình dùng fix lỗi thông báo trên xiaomi hyperOS
-
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P3A3285YNL)<br>
+<span style="color: green;">Chương trình dùng fix lỗi thông báo trên xiaomi hyperOS</span>
 [05/10/2026]
 - Do những thay đổi trong whitelist sẽ bị hệ thống viết đè sau 1 thời gian, tôi chuyển sang dùng phần mềm đánh thức nhỏ gọn ko ảnh hưởng đến trải nghiệm người dùng
 - phần mềm được chạy tự động, bạn chỉ cần cấp quyền thông báo và định vị cho nó
@@ -19,4 +19,3 @@ Các bước thực hiện:
 - kết nối điện thoại với máy tính
 - nhấp đúp vào file fast-tweak.cmd để chạy lệnh
 Tận hưởng kết quả đạt được!
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P3A3285YNL)
