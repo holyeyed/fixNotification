@@ -15,3 +15,4 @@ so that, it keep running even Powersaver keep another app turn off.
 I write a simple app with the same package (com.tencent.mm) that run the service which mnake device keep wake up, 
 so improve background app, keep them wake up too. 
 Enjoy it!
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P3A3285YNL)
