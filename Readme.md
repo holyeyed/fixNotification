@@ -1,5 +1,6 @@
 Chương trình dùng fix lỗi thông báo trên xiaomi hyperOS
-* 05/10/2026
+
+[05/10/2026]
 - Do những thay đổi trong whitelist sẽ bị hệ thống viết đè sau 1 thời gian, tôi chuyển sang dùng phần mềm đánh thức nhỏ gọn ko ảnh hưởng đến trải nghiệm người dùng
 - phần mềm được chạy tự động, bạn chỉ cần cấp quyền thông báo và định vị cho nó
 - Với các ứng dụng cần thông báo, bạn phải cài Autostart cho nó, để nó có thể khởi động lại sau đó.
